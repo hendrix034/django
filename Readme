@@ -1,0 +1,36 @@
+For postman
+
+Users Endpoint
+List Users: GET http://127.0.0.1:8000/api/users/
+Create User: POST http://127.0.0.1:8000/api/users/
+Retrieve User: GET http://127.0.0.1:8000/api/users/{id_user}/
+Update User: PUT http://127.0.0.1:8000/api/users/{id_user}/
+Delete User: DELETE http://127.0.0.1:8000/api/users/{id_user}/
+
+Rides Endpoint
+List Rides: GET http://127.0.0.1:8000/api/rides/
+Create Ride: POST http://127.0.0.1:8000/api/rides/
+Retrieve Ride: GET http://127.0.0.1:8000/api/rides/{id_ride}/
+Update Ride: PUT http://127.0.0.1:8000/api/rides/{id_ride}/
+Delete Ride: DELETE http://127.0.0.1:8000/api/rides/{id_ride}/
+
+Ride Events Endpoint
+List Ride Events: GET http://127.0.0.1:8000/api/ride-events/
+Create Ride Event: POST http://127.0.0.1:8000/api/ride-events/
+Retrieve Ride Event: GET http://127.0.0.1:8000/api/ride-events/{id_ride_event}/
+Update Ride Event: PUT http://127.0.0.1:8000/api/ride-events/{id_ride_event}/
+Delete Ride Event: DELETE http://127.0.0.1:8000/api/ride-events/{id_ride_event}/
+
+Run this to your terminal 
+"python manage.py shell" 
+
+Run the following commands in the Django shell to generate token:
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
+
+user = User.objects.get(username='juan')
+token = Token.objects.create(user=user)
+print(token.key)
+
+Then run this
+python manage.py runserver
